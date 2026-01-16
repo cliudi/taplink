@@ -28,7 +28,7 @@ body {
 
 /* СЕКЦИИ */
 .section {
-  padding: 50px 16px;
+  padding: 5px 16px;
   display: flex;
   justify-content: center;
 }
@@ -261,9 +261,16 @@ body {
   text-decoration: none;
   border-radius: 40px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 18px;
   transition: all 0.35s ease;
 }
+/* ===== БОЛЬШАЯ КНОПКА ===== */
+.btn-big {
+  font-size: 18px;
+  padding: 18px 42px;
+  margin-top: 30px;
+}
+
 
 .btn:hover {
   transform: translateY(-2px);
@@ -433,6 +440,24 @@ body {
   }
 }
 
+/* ===== ФИНАЛЬНЫЙ АКЦЕНТНЫЙ БЛОК ===== */
+.final-section {
+  padding: 5px 16px; /* больше воздуха */
+}
+
+.final-block {
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #f4e8dc, #fffaf5);
+  text-align: center;
+}
+
+.final-block h2 {
+  font-size: 34px;
+}
+
+.final-block p {
+  font-size: 17px;
+}
 
 
 </style>
@@ -453,7 +478,7 @@ body {
           <p>
 Бали, Индонезия | 20–27 марта 2026
 
-Авторский ретрит от Вефы Геюшевой и Нодиры Саид
+Авторский ретрит от Вефы Геюшевой и Надиры Саид
 
 Для женщин, которые всё могут, всё тянут — но чувствуют, что пора замедлиться и вернуть контакт с собой живой.
           </p>
@@ -611,7 +636,7 @@ body {
       </div>
  <div class="coach-photo">
   <img src="Nodira.jfif" alt="">
-        <h3>Нодира Саид</h3>
+        <h3>Надира Саид</h3>
         <p>
 Коуч ICF  
 Автор подкаста Bir KUN  
@@ -623,8 +648,8 @@ body {
 </section>
 
 <!-- ФИНАЛ -->
-<section class="section">
-  <div class="container block" style="text-align:center">
+<section class="section final-section">
+  <div class="container block final-block">
     <h2>🔥 Это не просто отдых – это полная перезагрузка.</h2>
 
     <p>
@@ -633,7 +658,9 @@ body {
 📅 Бали | 20–27 марта 2026
     </p>
 
-    <a href="https://forms.gle/Q9ymw9AwqrSuLH3Y9" class="btn">Заполнить анкету участницы</a>
+    <a href="https://forms.gle/Q9ymw9AwqrSuLH3Y9" class="btn btn-big">
+  Заполнить анкету для участия
+</a>
   </div>
 </section>
 
