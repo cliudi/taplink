@@ -77,7 +77,15 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 36px;
   margin-bottom: 12px;
+  line-height: 1.25;
+
+  /* 🔑 ВАЖНО ДЛЯ МОБИЛОК */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
+
 
 .hero-text p {
   font-size: 17px;
@@ -176,52 +184,74 @@ body {
 
 @keyframes slide {
   0%   { transform: translateX(0); }
-  25%  { transform: translateX(0); }
+  16%  { transform: translateX(0); }
 
-  30%  { transform: translateX(-100%); }
-  50%  { transform: translateX(-100%); }
+  20%  { transform: translateX(-100%); }
+  36%  { transform: translateX(-100%); }
 
-  55%  { transform: translateX(-200%); }
-  75%  { transform: translateX(-200%); }
+  40%  { transform: translateX(-200%); }
+  56%  { transform: translateX(-200%); }
 
-  80%  { transform: translateX(-300%); }
-  100% { transform: translateX(-300%); }
+  60%  { transform: translateX(-300%); }
+  76%  { transform: translateX(-300%); }
+
+  80%  { transform: translateX(-400%); }
+  96%  { transform: translateX(-400%); }
+
+  100% { transform: translateX(0); }
 }
 
 
+
+/* ВЕДУЩИЕ */
 /* ВЕДУЩИЕ */
 .coaches {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 24px;
 }
 
 .coach-card {
   background: #faf7f3;
-  border-radius: 18px;
+  border-radius: 22px;
   overflow: hidden;
   text-align: center;
+  padding-bottom: 16px;
 }
 
+/* ОБЁРТКА ДЛЯ ФОТО */
 .coach-card img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;     /* показываем фото целиком */
-  background: #efe4d8;     /* мягкая рамка */
+  height: 360px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
 }
 
-
+/* ТЕКСТ */
 .coach-card h3 {
   font-family: "Playfair Display", serif;
-  margin: 12px 0 5px;
+  margin: 14px 0 6px;
   font-size: 20px;
 }
 
 .coach-card p {
   font-size: 14px;
-  padding: 0 18px 18px;
+  padding: 0 18px;
   color: #5a4a42;
   white-space: pre-line;
+}
+
+/* 📱 МОБИЛКА */
+@media (max-width: 900px) {
+  .coaches {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-card img {
+    height: 420px; /* красиво под вертикальные фото */
+    border-radius: 22px;
+  }
 }
 
 /* КНОПКА */
@@ -257,6 +287,20 @@ body {
 @media (max-width: 900px) {
   .slider {
     height: 420px;
+  }
+}
+@media (max-width: 900px) {
+  .hero-text {
+    padding: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .hero-text p {
+    font-size: 14px;
   }
 }
 
@@ -359,6 +403,40 @@ body {
   60%, 85%  { transform: translateX(-200%); }
   100%      { transform: translateX(0); }
 }
+/* ===== КОУЧИ: аккуратное округление + мобилка ===== */
+
+.coach-photo {
+  background: #faf7f3;
+  border-radius: 22px;
+  overflow: hidden; /* чтобы фото реально округлялось */
+  text-align: center;
+}
+
+/* фото коуча */
+.coach-photo img {
+  width: 100%;
+  height: auto;        /* ❗ НЕ уменьшаем и не режем */
+  display: block;
+  border-radius: 22px;
+}
+
+/* мобильная адаптация — БЕЗ изменения размеров */
+@media (max-width: 900px) {
+  .coaches {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .coach-photo {
+    border-radius: 22px;
+  }
+
+  .coach-photo img {
+    border-radius: 22px;
+  }
+}
+
+
 
 </style>
 </head>
@@ -394,9 +472,9 @@ body {
     <h2>Если ты узнаёшь себя — это приглашение для тебя</h2>
 <div class="method-slider">
   <div class="method-slides">
-    <div class="method-slide"><img src="605.jpg" alt=""></div>
-    <div class="method-slide"><img src="Yoga-Retreat-Bali-1.jpg" alt=""></div>
-    <div class="method-slide"><img src="1095.jpg" alt=""></div>
+    <div class="method-slide"><img src="605-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="Yoga-Retreat-Bali-1-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="1095-compressed.webp" alt=""></div>
   </div>
 </div>
 
@@ -419,9 +497,9 @@ body {
     <h2>Что ты получишь за 7 дней?</h2>
 <div class="method-slider">
   <div class="method-slides">
-    <div class="method-slide"><img src="634.jpg" alt=""></div>
-    <div class="method-slide"><img src="9184.jpg" alt=""></div>
-    <div class="method-slide"><img src="1157.jpg" alt=""></div>
+    <div class="method-slide"><img src="634-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="9184-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="1157-compressed.webp" alt=""></div>
   </div>
 </div>
 
@@ -447,9 +525,9 @@ body {
     <h2>Формат и методология</h2>
 <div class="method-slider">
   <div class="method-slides">
-    <div class="method-slide"><img src="2150668960.jpg" alt=""></div>
-    <div class="method-slide"><img src="25561413.jpg" alt=""></div>
-    <div class="method-slide"><img src="7507650.jpg" alt=""></div>
+    <div class="method-slide"><img src="1173-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="25561413-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="7507650-compressed.webp" alt=""></div>
   </div>
 </div>
 
@@ -470,9 +548,9 @@ body {
     <h2>Ключевые темы ретрита</h2>
 <div class="method-slider">
   <div class="method-slides">
-    <div class="method-slide"><img src="28678.jpg" alt=""></div>
-    <div class="method-slide"><img src="1781.jpg" alt=""></div>
-    <div class="method-slide"><img src="45499.jpg" alt=""></div>
+    <div class="method-slide"><img src="28678-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="1781-compressed.webp" alt=""></div>
+    <div class="method-slide"><img src="45499-compressed.webp" alt=""></div>
   </div>
 </div>
     <ul class="dot-list">
@@ -499,10 +577,11 @@ body {
 
     <div class="slider">
       <div class="slides">
-        <div class="slide"><img src="43177.jpg" alt=""></div>
-        <div class="slide"><img src="1288.jpg" alt=""></div>
-        <div class="slide"><img src="1431.jpg" alt=""></div>
-        <div class="slide"><img src="14638973.jpg" alt=""></div>
+        <div class="slide"><img src="43177-compressed.webp" alt=""></div>
+        <div class="slide"><img src="1288-compressed.webp" alt=""></div>
+        <div class="slide"><img src="1431-compressed.webp" alt=""></div>
+        <div class="slide"><img src="14638973-compressed.webp" alt=""></div>
+        <div class="slide"><img src="2150668960-compressed.webp" alt=""></div>
       </div>
     </div>
 
@@ -526,7 +605,7 @@ body {
 
     <div class="coaches">
       <div class="coach-photo">
-  <img src="Nodira.jfif" alt="">
+  <img src="Nodira-compressed.webp" alt="">
         <h3>Вэфа Геюшова</h3>
         <p>
 Психолог, коуч ICF  
@@ -535,7 +614,7 @@ body {
         </p>
       </div>
  <div class="coach-photo">
-  <img src="Nodira.jfif" alt="">
+  <img src="Nodira-compressed.webp" alt="">
         <h3>Нодира Саид</h3>
         <p>
 Коуч ICF  
